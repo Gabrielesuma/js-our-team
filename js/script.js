@@ -31,12 +31,32 @@ var team = [
     }
 ];
 
+const cont = document.getElementById('mainly');
+const divRow = document.querySelector('.row');
+
 for(i = 0; i < team.length; i++){
-    const cont = document.getElementById('main');
-    const div = document.createElement('div');
-    div.innerHTML = `Nome: ${team[i].nome} Ruolo: ${team[i].ruolo} <img src = img/${team[i].foto}>`
-    cont.appendChild(div);
-    console.log(team[i].nome);
-    console.log(team[i].ruolo);
-    console.log(team[i].foto);
+    const divCol = document.createElement('div');
+    divCol.classList.add('col-4');
+    const divCard = document.createElement('div');
+    divCard.classList.add('card');
+    const divPerson = document.createElement('div');
+    divPerson.classList.add('d-flex', 'flex-wrap');
+
+    divPerson.innerHTML = `<img src="img/${team[i].foto}"> <div><div>${team[i].nome}</div> <div>${team[i].ruolo}</div></div>`;
+
+    divCard.appendChild(divPerson);
+    divCol.appendChild(divCard);
+    divRow.appendChild(divCol);
+    cont.appendChild(divRow);
+    
+    
+    //const div = document.createElement('div');
+    //div.innerHTML = `Nome: ${team[i].nome} Ruolo: ${team[i].ruolo} <img src = img/${team[i].foto}>`
+    //cont.appendChild(div);
+
+
+
+    //console.log(team[i].nome);
+    //console.log(team[i].ruolo);
+    //console.log(team[i].foto);
 }
