@@ -38,11 +38,14 @@ for(i = 0; i < team.length; i++){
     const divCol = document.createElement('div');
     divCol.classList.add('col-4');
     const divCard = document.createElement('div');
-    divCard.classList.add('card');
+    divCard.classList.add('card', 'm-2');
     const divPerson = document.createElement('div');
-    divPerson.classList.add('d-flex', 'flex-wrap');
 
-    divPerson.innerHTML = `<img src="img/${team[i].foto}"> <div><div>${team[i].nome}</div> <div>${team[i].ruolo}</div></div>`;
+    divPerson.innerHTML = `
+    <img class="w-100" src="img/${team[i].foto}">
+    <div>${team[i].nome}</div>
+    <div>${team[i].ruolo}</div>
+    `;
 
     divCard.appendChild(divPerson);
     divCol.appendChild(divCard);
